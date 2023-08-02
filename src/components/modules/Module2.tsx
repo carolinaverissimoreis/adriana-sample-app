@@ -30,7 +30,7 @@ export const Module2 = () => {
   // }
 
   return (
-    <Module name={"Module One - Module2"}>
+    <Module name={"Module 1 - Module 2"}>
       <h2>
         Total: {number}
         <br />

@@ -30,7 +30,7 @@ export const Module1 = () => {
   }, [name]);
 
   return (
-    <Module name={"Module One-SubModule1"}>
+    <Module name={"Module 1 - Sub Module 1"}>
       <div>
         <CommonModule2Modal
           open={openModal}

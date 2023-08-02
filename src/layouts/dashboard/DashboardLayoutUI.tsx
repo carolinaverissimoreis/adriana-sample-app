@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import { Layout } from "antd";
 
 import { Sidebar } from "./sidebar";
-import { Header } from "./Header";
-import { Breadcrumbs } from "./Breadcrumbs";
+// import { Header } from "./Header";
+// import { Breadcrumbs } from "./Breadcrumbs";
 import { ContentContainer } from "./ContentContainer";
 
 // -----------------------------------------------------------------
@@ -14,10 +14,10 @@ export const DashboardLayoutUI = () => {
       <Sidebar />
 
       <Layout>
-        <Header />
+        {/* <Header /> */}
 
-        <Layout.Content style={{ margin: "0 16px" }}>
-          <Breadcrumbs />
+        <Layout.Content style={{ margin: "16px" }}>
+          {/* <Breadcrumbs /> */}
 
           <ContentContainer>
             <Outlet />
