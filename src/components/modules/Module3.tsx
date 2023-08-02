@@ -8,8 +8,6 @@ import { Module1 } from "./Module1";
 export const Module3 = () => {
   const { name } = useAppSelector(selectProductsSlice);
 
-  console.log("name = ", name);
-
   return (
     <Module name={`Sub Module 3 - ${name}`}>
       <div>
