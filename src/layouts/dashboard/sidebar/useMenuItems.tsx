@@ -38,7 +38,7 @@ export const useMenuItems = () => {
       getItem(<Link to="/">Home</Link>, "1", <HomeOutlined />),
 
       getItem("Module 3", "sub3", <MailOutlined />, [
-        getItem(<Link to="/product2/module-3">Sub Module 3</Link>, "2"),
+        getItem(<Link to="/product-2/module-3">Sub Module 3</Link>, "2"),
       ]),
 
       getItem("Module 4", "sub4", <MailOutlined />, [
@@ -53,12 +53,12 @@ export const useMenuItems = () => {
     getItem(<Link to="/">Home</Link>, "1", <HomeOutlined />),
 
     getItem("Module 1", "sub1", <MailOutlined />, [
-      getItem(<Link to="/product1/module-1">Sub Module 1</Link>, "2"),
+      getItem(<Link to="/product-1/module-1">Sub Module 1</Link>, "2"),
       getItem(<Link to="/common-module-1">Common Module 1</Link>, "3"),
     ]),
 
     getItem("Module 2", "sub2", <AppstoreOutlined />, [
-      getItem(<Link to="/product1/module-2">Sub Module 2</Link>, "4"),
+      getItem(<Link to="/product-1/module-2">Sub Module 2</Link>, "4"),
     ]),
 
     getItem(

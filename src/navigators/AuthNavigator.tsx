@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { HomePage } from "../pages/HomePage";
+import { HomePage } from "../pages/home";
 import { Module1Page } from "../pages/Module1Page";
 import { Module2Page } from "../pages/Module2Page";
 import { Module3Page } from "../pages/Module3Page";
@@ -16,11 +16,11 @@ export const AuthNavigator = () => {
       <Route element={<DashboardLayout />}>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/product1/module-1" element={<Module1Page />} />
+        <Route path="/product-1/module-1" element={<Module1Page />} />
 
-        <Route path="/product1/module-2" element={<Module2Page />} />
+        <Route path="/product-1/module-2" element={<Module2Page />} />
 
-        <Route path="/product2/module-3" element={<Module3Page />} />
+        <Route path="/product-2/module-3" element={<Module3Page />} />
 
         <Route path="/common-module-1" element={<CommonModule1Page />} />
 
