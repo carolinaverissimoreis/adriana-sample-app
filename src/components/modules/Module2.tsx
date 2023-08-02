@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Spin } from "antd";
 
 import { useLazyGetProductsDataQuery } from "../../store/apis";
 import { useAppSelector } from "../../store";
@@ -8,7 +9,7 @@ import { Module } from "./Module";
 // -----------------------------------------------------------------
 
 export const Module2 = () => {
-  const [getProductsData] = useLazyGetProductsDataQuery();
+  const [getProductsData, { isLoading }] = useLazyGetProductsDataQuery();
 
   const { number, region } = useAppSelector(selectProductsSlice);
 
@@ -21,7 +22,7 @@ export const Module2 = () => {
       <h2>
         Total: {number.toFixed(2)}
         <br />
-        {region}
+        {isLoading ? <Spin /> : region}
       </h2>
     </Module>
   );
