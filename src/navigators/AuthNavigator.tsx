@@ -6,7 +6,7 @@ import { Module2Page } from "../pages/Module2Page";
 import { Module3Page } from "../pages/Module3Page";
 import { CommonModule1Page } from "../pages/CommonModule1Page";
 import { CommonModule2Page } from "../pages/CommonModule2Page";
-import { DashboardLayout } from "../layouts/DashboardLayout";
+import { DashboardLayout } from "../layouts/dashboard";
 
 // -----------------------------------------------------------------
 
