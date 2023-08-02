@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Button, Divider, Input, message } from "antd";
+import { Button, Divider, Input, Space, message } from "antd";
 import { SaveOutlined, UserOutlined } from "@ant-design/icons";
 
 import { useAppDispatch, useAppSelector } from "../../store";
@@ -41,19 +41,21 @@ export const Module1 = () => {
 
         <br />
 
-        <Button onClick={() => setOpenModal(true)}>
-          <UserOutlined />
-        </Button>
+        <Space>
+          <Button onClick={() => setOpenModal(true)}>
+            <UserOutlined />
+          </Button>
 
-        <Input
-          style={{ width: 120 }}
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
+          <Input
+            style={{ width: 240 }}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
 
-        <Button onClick={() => saveValue()}>
-          <SaveOutlined />
-        </Button>
+          <Button onClick={() => saveValue()}>
+            <SaveOutlined />
+          </Button>
+        </Space>
 
         <Divider />
 
