@@ -3,7 +3,7 @@ import { Button, Divider, Input, message } from "antd";
 import { SaveOutlined, UserOutlined } from "@ant-design/icons";
 
 import { useAppDispatch, useAppSelector } from "../../store";
-import { selectproductsSlice, updateProductsSlice } from "../../store/slices";
+import { selectProductsSlice, updateProductsSlice } from "../../store/slices";
 import { Module } from "./Module";
 import { CommonModule1 } from "./CommonModule1";
 import { CommonModule2Modal } from "./CommonModule2Modal";
@@ -15,7 +15,7 @@ export const Module1 = () => {
 
   const dispatch = useAppDispatch();
 
-  const { name } = useAppSelector(selectproductsSlice);
+  const { name } = useAppSelector(selectProductsSlice);
 
   const [value, setValue] = useState(name);
 

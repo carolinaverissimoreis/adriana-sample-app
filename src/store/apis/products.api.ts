@@ -8,14 +8,18 @@ export const productsApi = baseApi.injectEndpoints({
 
   endpoints: (build) => {
     /**
-     * Get products
+     * Get data
      */
-    const getProducts = build.query<GetProductsRes, GetProductsReq>({
-      query: (params) => {
-        return {
-          url: `/products`,
-          params,
-        };
+    const getProductsData = build.query<GetProductsRes, GetProductsReq>({
+      query: ({ url }) => {
+        return { url };
+      },
+      transformResponse: (res: any) => {
+        if (res && res?.length > 0) {
+          return { data: res[0] };
+        }
+
+        return { data: null };
       },
       providesTags: ["products"],
     });
@@ -24,7 +28,7 @@ export const productsApi = baseApi.injectEndpoints({
      * Return
      */
     return {
-      getProducts,
+      getProductsData,
     };
   },
 });
@@ -32,7 +36,7 @@ export const productsApi = baseApi.injectEndpoints({
 /**
  * Hooks
  */
-export const { useLazyGetProductsQuery } = productsApi;
+export const { useLazyGetProductsDataQuery } = productsApi;
 
 /**
  * Types
@@ -40,4 +44,6 @@ export const { useLazyGetProductsQuery } = productsApi;
  */
 export type GetProductsRes = any;
 
-export type GetProductsReq = any;
+export type GetProductsReq = {
+  url: string;
+};

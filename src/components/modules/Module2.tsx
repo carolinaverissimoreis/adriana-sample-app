@@ -1,38 +1,25 @@
 import { useEffect } from "react";
 
-import { useLazyGetProductsQuery } from "../../store/apis";
+import { useLazyGetProductsDataQuery } from "../../store/apis";
 import { useAppSelector } from "../../store";
-import { selectproductsSlice } from "../../store/slices";
+import { selectProductsSlice } from "../../store/slices";
 import { Module } from "./Module";
 
 // -----------------------------------------------------------------
 
 export const Module2 = () => {
-  const [getProducts] = useLazyGetProductsQuery();
+  const [getProductsData] = useLazyGetProductsDataQuery();
 
-  const { number, region } = useAppSelector(selectproductsSlice);
+  const { number, region } = useAppSelector(selectProductsSlice);
 
   useEffect(() => {
-    getProducts({});
-  }, [getProducts]);
-
-  // function getData() {
-  //   Api.getData(`https://restcountries.com/v3.1/currency/cop`)
-  //     .then((data: any) => {
-  //       dispatch({
-  //         type: "REGION",
-  //         payload: data[0].region,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
+    getProductsData({ url: `https://restcountries.com/v3.1/currency/cop` });
+  }, [getProductsData]);
 
   return (
     <Module name={"Module 1 - Module 2"}>
       <h2>
-        Total: {number}
+        Total: {number.toFixed(2)}
         <br />
         {region}
       </h2>

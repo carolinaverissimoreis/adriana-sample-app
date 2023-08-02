@@ -3,7 +3,7 @@ import { Select } from "antd";
 import { useAppDispatch, useAppSelector } from "../../store";
 import {
   ProductsSliceState,
-  selectproductsSlice,
+  selectProductsSlice,
   updateProductsSlice,
 } from "../../store/slices";
 import "./style.scss";
@@ -12,7 +12,7 @@ import "./style.scss";
 
 export const ProductCategorySwitcher = () => {
   const dispatch = useAppDispatch();
-  const { category } = useAppSelector(selectproductsSlice);
+  const { category } = useAppSelector(selectProductsSlice);
 
   const handleChange = (category: ProductsSliceState["category"]) => {
     dispatch(updateProductsSlice({ category }));

@@ -5,10 +5,10 @@ import { HomeOutlined } from "@ant-design/icons";
 import { Button, Card, Result } from "antd";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../store";
-import { selectproductsSlice } from "../../store/slices";
+import { selectProductsSlice } from "../../store/slices";
 
 export const HomePage = () => {
-  const { category, name } = useAppSelector(selectproductsSlice);
+  const { category, name } = useAppSelector(selectProductsSlice);
 
   const categoryName = category === "product1" ? "Product 1" : "Product 2";
 

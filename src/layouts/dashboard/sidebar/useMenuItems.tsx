@@ -8,7 +8,7 @@ import {
 import type { MenuProps } from "antd";
 
 import { useAppSelector } from "../../../store";
-import { selectproductsSlice } from "../../../store/slices";
+import { selectProductsSlice } from "../../../store/slices";
 
 // -----------------------------------------------------------------
 
@@ -31,7 +31,7 @@ function getItem(
 // -----------------------------------------------------------------
 
 export const useMenuItems = () => {
-  const { category } = useAppSelector(selectproductsSlice);
+  const { category } = useAppSelector(selectProductsSlice);
 
   if (category === "product2") {
     const items: MenuItem[] = [

@@ -5,7 +5,7 @@ import { productsApi } from "../apis";
 
 export type ProductsSliceState = {
   category: "product1" | "product2";
-  products: Array<any>;
+  data: any;
   isLoadingProducts: boolean;
   name: string;
   number: number;
@@ -14,10 +14,10 @@ export type ProductsSliceState = {
 
 const initialState: ProductsSliceState = {
   category: "product1",
-  products: [],
+  data: null,
   isLoadingProducts: false,
   name: "",
-  number: 0,
+  number: 4,
   region: "",
 };
 
@@ -37,13 +37,24 @@ export const productsSlice = createSlice({
   },
   extraReducers: (builder) => {
     return builder
-      .addMatcher(productsApi.endpoints.getProducts.matchPending, (state) => {
-        state.isLoadingProducts = true;
-      })
       .addMatcher(
-        productsApi.endpoints.getProducts.matchFulfilled,
+        productsApi.endpoints.getProductsData.matchPending,
+        (state) => {
+          state.isLoadingProducts = true;
+        }
+      )
+      .addMatcher(
+        productsApi.endpoints.getProductsData.matchFulfilled,
         (state, result) => {
-          state.products = result.payload.data;
+          const data = result.payload.data;
+
+          state.data = data;
+
+          if (data) {
+            const { region } = data;
+
+            state.region = region || "";
+          }
 
           state.isLoadingProducts = false;
         }
@@ -59,15 +70,15 @@ export const { updateProductsSlice } = productsSlice.actions;
 /**
  * Selectors
  */
-export const selectproductsSlice = (state: RootState) => {
+export const selectProductsSlice = (state: RootState) => {
   return state.productsSlice;
 };
 
-export const selectProducts = createSelector(
-  [selectproductsSlice],
+export const selectProductsData = createSelector(
+  [selectProductsSlice],
   (productsSlice) => {
-    const products = productsSlice.products;
+    const data = productsSlice.data;
 
-    return products;
+    return data;
   }
 );

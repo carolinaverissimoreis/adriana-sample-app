@@ -3,7 +3,7 @@ import { Modal, message, Button } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 
 import { useAppDispatch, useAppSelector } from "../../store";
-import { selectproductsSlice, updateProductsSlice } from "../../store/slices";
+import { selectProductsSlice, updateProductsSlice } from "../../store/slices";
 import { CommonModulePeople } from "./CommonModulePeople";
 
 // -----------------------------------------------------------------
@@ -18,7 +18,7 @@ export const CommonModule2Modal = ({
   onCancel = () => {},
 }: CommonModule2ModalProps) => {
   const dispatch = useAppDispatch();
-  const { name } = useAppSelector(selectproductsSlice);
+  const { name } = useAppSelector(selectProductsSlice);
 
   const [value, setValue] = useState(name);
 
