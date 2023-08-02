@@ -7,6 +7,8 @@ import {
   useState,
 } from "react";
 
+// -----------------------------------------------------------------
+
 export type DashbaordLayoutContextType = {
   collapsed: boolean;
 
@@ -15,15 +17,21 @@ export type DashbaordLayoutContextType = {
   ) => void;
 };
 
+// -----------------------------------------------------------------
+
 const defaultDashbaordLayoutContextValue: DashbaordLayoutContextType = {
   collapsed: false,
 
   updateContextValue: () => {},
 };
 
+// -----------------------------------------------------------------
+
 export const DashbaordLayoutContext = createContext<DashbaordLayoutContextType>(
   defaultDashbaordLayoutContextValue
 );
+
+// -----------------------------------------------------------------
 
 type DashbaordLayoutContextProviderProps = PropsWithChildren;
 
@@ -53,6 +61,8 @@ export const DashbaordLayoutContextProvider = ({
     </DashbaordLayoutContext.Provider>
   );
 };
+
+// -----------------------------------------------------------------
 
 export const useDashbaordLayoutContext = () => {
   const contextValue = useContext(DashbaordLayoutContext);

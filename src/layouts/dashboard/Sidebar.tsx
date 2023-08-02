@@ -7,9 +7,12 @@ import {
 import type { MenuProps } from "antd";
 import { Layout, Menu } from "antd";
 
+import { useAppDispatch, useAppSelector } from "../../store";
+import { selectproductsSlice, updateProductsSlice } from "../../store/slices";
 import { useDashbaordLayoutContext } from "./DashboardLayoutContext";
+import { useEffect } from "react";
 
-const { Sider } = Layout;
+// -----------------------------------------------------------------
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -43,8 +46,18 @@ export const Sidebar = () => {
   const { collapsed, updateContextValue: updateDashboardLayout } =
     useDashbaordLayoutContext();
 
+  const dispatch = useAppDispatch();
+
+  const { category } = useAppSelector(selectproductsSlice);
+
+  console.log("categpry = ", category);
+
+  useEffect(() => {
+    dispatch(updateProductsSlice({ category: "product2" }));
+  }, [dispatch]);
+
   return (
-    <Sider
+    <Layout.Sider
       collapsible
       collapsed={collapsed}
       onCollapse={(collapsed) => updateDashboardLayout({ collapsed })}
@@ -55,6 +68,6 @@ export const Sidebar = () => {
         mode="inline"
         items={items}
       />
-    </Sider>
+    </Layout.Sider>
   );
 };

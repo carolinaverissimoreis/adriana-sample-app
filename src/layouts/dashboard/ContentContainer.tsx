@@ -1,6 +1,8 @@
 import { PropsWithChildren } from "react";
 import { theme } from "antd";
 
+// -----------------------------------------------------------------
+
 type ContentContainerProps = PropsWithChildren;
 
 export const ContentContainer = ({ children }: ContentContainerProps) => {
