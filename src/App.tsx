@@ -1,10 +1,14 @@
-import { Button } from "antd";
+import { BrowserRouter } from "react-router-dom";
+
+import { RootNavigator } from "./navigators/RootNavigator";
+
+// -----------------------------------------------------------------
 
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
+    <BrowserRouter>
+      <RootNavigator />
+    </BrowserRouter>
   );
 }
 
