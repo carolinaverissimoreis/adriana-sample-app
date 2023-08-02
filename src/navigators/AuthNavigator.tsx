@@ -6,23 +6,26 @@ import { Module2Page } from "../pages/Module2Page";
 import { Module3Page } from "../pages/Module3Page";
 import { CommonModule1Page } from "../pages/CommonModule1Page";
 import { CommonModule2Page } from "../pages/CommonModule2Page";
+import { DashboardLayout } from "../layouts/DashboardLayout";
 
 // -----------------------------------------------------------------
 
 export const AuthNavigator = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route element={<DashboardLayout />}>
+        <Route path="/" element={<HomePage />} />
 
-      <Route path="/product1/module-1" element={<Module1Page />} />
+        <Route path="/product1/module-1" element={<Module1Page />} />
 
-      <Route path="/product1/module-2" element={<Module2Page />} />
+        <Route path="/product1/module-2" element={<Module2Page />} />
 
-      <Route path="/product2/module-3" element={<Module3Page />} />
+        <Route path="/product2/module-3" element={<Module3Page />} />
 
-      <Route path="/common-module-1" element={<CommonModule1Page />} />
+        <Route path="/common-module-1" element={<CommonModule1Page />} />
 
-      <Route path="/common-module-2" element={<CommonModule2Page />} />
+        <Route path="/common-module-2" element={<CommonModule2Page />} />
+      </Route>
     </Routes>
   );
 };
