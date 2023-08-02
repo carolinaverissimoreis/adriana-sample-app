@@ -13,7 +13,7 @@ export const Module3 = () => {
       <div>
         <h1>{name}</h1>
 
-        <p>Field name is empty: {!!name.trim() ? "true" : "false"}</p>
+        <p>Field name is empty: {!!name.trim() ? "false" : "true"}</p>
 
         <Module1 />
       </div>
