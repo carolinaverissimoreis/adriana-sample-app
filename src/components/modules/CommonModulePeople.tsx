@@ -59,7 +59,9 @@ export const CommonModulePeople = ({
 
   const rowSelection = {
     onChange: (_: any, selectedRows: any) => {
-      setValue(selectedRows[0].name);
+      if (selectedRows && selectedRows.length > 0) {
+        setValue(selectedRows[0].name);
+      }
     },
   };
 
