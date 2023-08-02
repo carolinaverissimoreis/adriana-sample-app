@@ -1,5 +1,7 @@
 // -----------------------------------------------------------------
 
+import { Module2 } from "../components/modules";
+
 export const Module2Page = () => {
-  return <div>Module2Page</div>;
+  return <Module2 />;
 };

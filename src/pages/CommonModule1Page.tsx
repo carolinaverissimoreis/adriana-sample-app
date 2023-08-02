@@ -1,5 +1,7 @@
 // -----------------------------------------------------------------
 
+import { CommonModule1 } from "../components/modules";
+
 export const CommonModule1Page = () => {
-  return <div>CommonModule1Page</div>;
+  return <CommonModule1 />;
 };
