@@ -1,0 +1,16 @@
+{
+  "name": "commons",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/commons/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/commons/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

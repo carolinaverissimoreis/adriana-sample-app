@@ -1,0 +1,16 @@
+{
+  "name": "product-1",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/product-1/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/product-1/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
